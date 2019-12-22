@@ -4,12 +4,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "employees")
-public class Employee extends Auditable {
+@Table(name = "questions")
+public class Question extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
@@ -19,12 +18,10 @@ public class Employee extends Auditable {
     @Getter
     @Setter
     @NotBlank
-    private String name;
+    private String question;
 
     @Getter
     @Setter
     @NotBlank
-    @Email
-    private String email;
-
+    private String correctAnswer;
 }
